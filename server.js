@@ -1,5 +1,6 @@
 require('dotenv').config()
 
+const cors = require('cors')
 const express = require('express')
 const mongoose = require('mongoose')
 const workoutRoutes = require('./routes/workouts')
@@ -7,6 +8,7 @@ const workoutRoutes = require('./routes/workouts')
 const app = express()
 const port = process.env.PORT;
 
+app.use(cors())
 app.use(express.json())
 
 app.use((req, res, next) => {
